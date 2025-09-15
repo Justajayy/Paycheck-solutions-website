@@ -1,0 +1,83 @@
+.about {
+  padding: 4rem 2rem;
+  background-color: #F2F2F2;
+  color: #F1F7F6;
+}
+
+.about-content {
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(0, 15, 31, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0 auto;
+  opacity: 0; /* Start hidden */
+  transform: translateY(100%); /* Start position for slide in */
+  transition: opacity 0.5s ease-out, transform 1s ease-out;
+}
+
+.about-content.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-content h2 {
+  font-family: 'Axioma', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0DD3BB;
+  text-align: center;
+}
+
+.about-content .icon {
+  color: #0DD3BB;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.about-content p {
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 200px;
+  background-image: url('assets/office.jpg'); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+}
+
+.about-content .learn-more-btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1rem;
+  }
+  .about-image {
+    height: 150px;
+  }
+  .about-content h2 {
+    font-size: 1.2rem;
+  }
+  .about-content p {
+    font-size: 0.9rem;
+  }
+}

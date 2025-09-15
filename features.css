@@ -1,0 +1,198 @@
+.features {
+  padding: 4rem 2rem;
+  background-color: #F2F2F2;
+  color: #F1F7F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.features-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.features-image {
+  flex: 1;
+  min-width: 450px;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F7F6;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.features-image.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  height: fit-content;
+  width: fit-content;
+}
+
+.features-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-text {
+  flex: 2;
+  padding: 1.5rem;
+  background-color: rgba(0, 15, 31, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.features-text.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.features-text h2 {
+  font-family: 'Axioma', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0DD3BB;
+}
+
+.features-text p {
+  font-family: 'Axioma', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.coming-soon-services {
+  display: grid;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto 0;
+  justify-content: center;
+  justify-items: center;
+}
+
+.service-card:nth-child(1) { grid-area: card1; }
+.service-card:nth-child(2) { grid-area: card2; }
+.service-card:nth-child(3) { grid-area: card3; }
+.service-card:nth-child(4) { grid-area: card4; }
+
+.service-card {
+  background-color: rgba(0, 15, 31, 0.8);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+  width: 100%;
+  max-width: 450px; /* Maintains rectangular shape */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0; /* Prevents icon from shrinking */
+  object-fit: contain;
+}
+
+.service-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Stacks h3 above p */
+  text-align: left;
+  justify-content: center; /* Vertically centers content */
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #0DD3BB;
+  margin-bottom: 0.75rem; /* Increased spacing between h3 and p */
+  font-family: 'Axioma', sans-serif;
+  font-weight: 600; /* Ensures bold appearance */
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #F1F7F6;
+  font-family: 'Axioma', sans-serif;
+  margin: 0; /* Removes default margin to control spacing */
+}
+
+.coming-soon {
+  display: inline-block;
+  font-size: 0.8rem;
+  background-color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  font-family: 'axioma', sans-serif;
+}
+
+.coming-soon-heading {
+  font-size: 2rem;
+  color: #0DD3BB;
+  margin: 3rem 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coming-soon-services {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+  }
+  .service-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-card p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-services {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+  .features-image {
+    min-width: 100%; /* Allow full width */
+  }
+}

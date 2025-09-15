@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  overflow-x: hidden; 
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+}
+
+.nav-links a, .home-btn, .nav-link {
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+}
+
+.login-btn {
+  background-color: #000f1f;
+  color: #F1F7F6;
+  border: 2px solid #00687a;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #00687a;
+  padding: 2rem;
+}
+
+.sidebar a, .sidebar .login-btn {
+  display: block;
+  padding: 0.5rem 0;
+  color: #F1F7F6;
+  text-decoration: none;
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .close-btn {
+  font-size: 1.5rem;
+  color: #F1F7F6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-links, .login-btn {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .sidebar.active {
+    display: block;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #00687a;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 50%;
+  z-index: 10;
+  text-align: left;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-100%); /* Start position for slide in */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-content.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-content h1 {
+  font-family: 'Axioma', sans-serif;
+  font-weight: 600;
+  color: #F1F7F6;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 15rem;
+}
+
+.hero-content p {
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+  color: #F1F7F6;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #000F1F;
+  color: #F1F7F6;
+  text-decoration: none;
+  font-family: 'Axioma', sans-serif;
+  font-weight: 500;
+  border: 2px solid #00687a;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.animation-container {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    padding-left: 10%;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .animation-container {
+    width: 30%;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+/* Gradient section after hero */
+.gradient-transition {
+  background: #00687A;
+background: linear-gradient(180deg, rgba(0, 104, 122, 1) 0%, rgba(18, 115, 131, 1) 9%, rgba(242, 242, 242, 1) 100%);
+  padding: 2rem;
+  box-sizing: border-box;
+  min-height: 50vh; /* Ensures the gradient is visible when scrolling */
+}
+
+/* Gradient section after about */
+.about-gradient-transition {
+ background: #00687A;
+background: linear-gradient(0deg, rgba(0, 104, 122, 1) 0%, rgba(18, 115, 131, 1) 9%, rgba(242, 242, 242, 1) 100%);
+  padding: 2rem;
+  box-sizing: border-box;
+  min-height: 50vh; /* Ensures the gradient is visible when scrolling */
+}
